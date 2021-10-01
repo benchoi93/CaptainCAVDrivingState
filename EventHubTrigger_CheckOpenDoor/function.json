@@ -1,0 +1,24 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "events",
+      "direction": "in",
+      "eventHubName": "pvsd",
+      "connection": "captain2vehicle_kaistuser_EVENTHUB",
+      "cardinality": "many",
+      "consumerGroup": "sjchoi_temp",
+      "dataType": "binary"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "documents",
+      "direction": "in",
+      "connectionStringSetting": "brt_COSMOSDB",
+      "databaseName": "BRT_Rroute",
+      "collectionName": "depart_and_door",
+      "sqlQuery": "SELECT * from c"
+    }
+  ]
+}
